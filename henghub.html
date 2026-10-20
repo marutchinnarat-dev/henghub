@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="เฮงฮับรับส่งพัสดุ, ส่งพัสดุ ศรีราชา, ปริ้นท์งาน, ถ่ายเอกสาร, เฮงฮับ">
+    <meta name="description" content="รับส่งพัสดุ I ปริ้นท์งาน I ถ่ายเอกสาร I ประกันภัยรถยนต์ I ส่งพัสดุต่างประเทศ ">
+    <meta http-equiv="refresh" content="30">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เฮงฮับ - รับส่งพัสดุ</title>
+
+        <link rel="icon"  href="/HH img/henghub.png" type="image/png" sizes="32x32">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Mitr:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --yellow: #ffd500;
+        --yellow2: #ffed69;
+        --yellow3: #FFE600;
+        --ink: #171717;
+        --ink2: #16130B;
+        --red: #E3241B;
+        --red2: #ef233c;
+        --soft: #FFF4A8;
+        --cream: #fffdf4;
+        --muted: #5c5c5c;
+        --muted2: #5a5441;
+        --line: #bdb7a0;
+        --kraft: #C9A06A; /*สีกล่องกระดาษ*/
+        --display:'Mitr', sans-serif;
+        --body: 'IBM Plex Sans Thai', 'Noto Sans Thai', sans-serif;
+        --momo: 'IBM Plex Mono', monospace;
+        --gutter: max(20px, 4vw);
+    }
+    * {
+        box-sizing: border-box;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Noto Sans Thai", Tahoma, sans-serif;
+        color: var(--ink);
+        background: #fff;
+        line-height: 1.6;
+    }
+    h1,h2,h3,p,ul,figure {
+        margin: 0;
+    }
+    div {
+        display: block;
+        unicode-bidi: isolate;
+    }
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    a:focus-visible {
+        outline: 3px solid var(--ink2);
+        outline-offset: 3px;
+    }
+    .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: min(1160px, 92%);
+      }
+      .eyebrow {
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: .08em;
+      }
+      .h2 {
+        font-family: var(--display);
+        font-weight: 700;
+        font-size: clamp(34px,4.2vw,56px);
+        line-height: 1.25;
+        text-wrap: balance;
+        }
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 52px;
+        padding: 0 29px;
+        font-weight: 700;
+        font-size: 17px;
+        border-radius: 9px;
+        transition: transform .15s;
+    }
+    .btn:hover {
+        text-decoration: none;
+        transform: translateY(-2px);
+    }
+    .btn-dark {
+        background: var(--ink2);
+        color: var(--yellow2);
+    }
+    .btn-line {
+        border: 3px solid var(--ink);
+        padding: 0.24px;
+    }
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 213, 0, 0.96);
+        backdrop-filter: blur(10px);
+        border-bottom : 3px solid var(--ink);
+    }
+    /*HERO*/
+    .hero {
+        background: var(--yellow2)
+        
+    }
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.03fr;
+        align-items: center;
+        gap: 30px;
+        margin-left: 30px;
+        background: var(--cream);
+    }
+    .hero .wrap {
+        padding-top: 20px;    }
+    .topbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px 32px;
+    }
+    .brand:hover {
+        text-decoration: none;
+    } 
+    .brand {
+        display:  flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 1000;
+        font-size: 1.45rem;
+        letter-spacing: 1px;
+
+    }
+    .brand-mark {
+        width: 56px;
+        height: 56px;
+}
+    .brand strong{
+        display: block;
+        font-family: var(--display);
+        font-size: 30px;
+        }
+    .brand small {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .04em;
+    }
+    nav a:hover {
+        color: var(--red2);
+        text-decoration: none;
+    }
+    .nav {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px 28px;
+        font-weight: 600; 
+       }
+    .cta {
+        min-height: 44px;
+        padding: 0 22px;
+        border-radius: 6px;
+        background: var(--ink);
+        color: var(--yellow);
+        display: inline-flex;
+        align-items: center;
+ }
+ cta:hover {
+    color: var(--red2);
+    text-decoration: none;
+ }
+  
+    .hero-body {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 56px 48px;
+        padding: 56px 0 80px;
+    }
+    .hero-text {
+        flex: 1 1 460px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+    .tag {
+        background: var(--ink);
+        color: var(--yellow);
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: .06em;
+        padding: 6px 14px;
+        border-radius: 4px;
+      }
+    h1 {
+        font-family: var(--display);
+        font-weight: 700;
+        font-size: clamp(44px, 6.2vw, 86px);
+        line-height: 1.2;
+        text-wrap: balance;   
+    }
+    h1 em {
+        font-style: normal; 
+        display: inline-block;
+        background: var(--ink);
+        color: var(--yellow);
+        padding: 0.18em;
+        margin: 0.28em;
+        transform: rotate(-1.5deg);
+    }
+    .lead {
+        font-size: 20px;
+        font-weight: 500;
+        max-width: 34em;
+    }
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        padding-top: 8px;
+    }
+    .tabular {
+        font-variant-numeric: tabular-nums;
+    }
+    .stripe {
+        height: 18px;
+        background: repeating-linear-gradient(-45deg,var(--ink2) 0 16px,var(--yellow2) 16px 32px);
+    }
+    /*ใบฝากส่ง*/
+    .slip-wrap {
+        flex: 1 1 400px;
+        min-width: 0;
+        display: flex;
+        justify-content: center;
+        padding: 48px 12px 20px 40px;
+    }
+    .slip-pos {
+        position: relative;
+        width: 100%;
+        max-width: 480px;
+    }
+    .sticker {
+        position: absolute;
+        z-index: 2;
+        top: -64px;
+        left: -48px;
+        width: 168px;
+        height: 168px;
+        transform: rotate(-10deg);
+        filter: drop-shadow(4px 5px 0 var(--ink2));
+    }
+    .slip {
+        background: #fff;
+        border: 3px solid var(--ink);
+        border-radius: 10 px;
+        box-shadow: 12px 12px 0 var(--ink2);
+        transform: rotate(1.5deg);
+        overflow: hidden;
+    }
+    .slip-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        background: var(--ink2);
+        color: var(--yellow2);
+        padding: 12px 18px 12px 128px;
+    }
+    .slip-head b {
+        font-family: var(--display);
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .fragile {
+        font-family: var(--momo);
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: .12em;
+        background: var(--red2);
+        color: #fff;
+        padding: 3px 8px;
+        border-radius: 3px;
+    }
+    .slip-rows {padding: 8px 22px 4px;}
+    .row {
+        display: grid;
+        grid-template-columns: 92px minmax(0,1fr);
+        align-items: baseline;
+        gap: 12px;
+        padding: 14px 0;
+        border-bottom: 2px dashed var(--line);
+    }
+     .row:last-child {
+            border-bottom: 0;
+    }
+    .row span {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--muted2);
+    }
+    .row b {
+        font-family: var(--display);
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    .slip-foot {
+        padding: 6px 22px 20px;
+    }
+    .barcode {
+        height: 62px;
+        background: repeating-linear-gradient(90deg,#16130B 0 3px,#fff 3px 6px,#16130B 6px 7px,#fff 7px 11px,#16130B 11px 15px,#fff 15px 17px,#16130B 17px 18px,#fff 18px 22px);
+    }
+    .slip-foot p {
+        padding-top: 8px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: .04em;
+    }
+    /*SERVICE*/
+  .trust {
+    background: var(--ink2);
+    color: white;
+    padding: 15px 0;
+    }  
+.trust-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-weight: 850;
+}
+.trust-row span {
+    background: #2b2b2b;
+    padding: 8px 13px;
+    border-radius: 8px;
+    }
+.trust-row b {
+    color: var(--yellow);
+} 
+section {
+    padding: 70px 0;
+}
+.section-head {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 32px;
+}
+.kicker {
+    color: #9a7600;
+    font-weight: 1000;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+.section-head h2 {
+    font-size: clamp(2rem,4vw,3.2rem);
+    line-height: 1.1;
+    margin: 8px 0 12px;
+    letter-spacing: -.04em;
+}
+.section-head p {
+    color: var(--muted);
+    font-weight: 600;
+    line-height: 1.7;
+    margin: 0;
+}
+.services {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+.service {
+    background: white;
+    border: 2px solid var(--ink);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 6px 6px 0 var(--ink);
+    transition: .2s;
+}
+.service:hover {
+    transform: translateY(-5px);
+}
+.service-icon {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    background: var(--yellow);
+    border: 2px solid var(--ink);
+    border-radius: 17px;
+    margin-bottom: 20px;
+}
+.service:nth-child(2) 
+.service-icon {
+    background: #ffb8bd;
+}
+.service h3 {
+    font-size: 1.4rem;
+    margin: 0 0 8px;
+}
+.service p {
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0 0 18px;
+}
+.service a {
+    font-weight: 900;
+    border-bottom: 2px solid var(--yellow);
+    padding-bottom: 3px;
+}
+/* CARRIERS*/
+.carriers {
+    background: #fff1a5;
+}
+.carrier-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 12px;
+}
+.carrier {
+    background: white;
+    border: 2px solid var(--ink);
+    border-radius: 13px;
+    min-height: 78px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 12px;
+    font-weight: 1000;
+    font-size: 1.15rem;
+    box-shadow: 3px 3px 0 var(--ink);
+}
+.carrier:nth-child(2n) {
+    color: #e31b23;
+}
+.carrier:nth-child(3n) {
+    color: #e9a900;
+}
+.carrier small {
+    display: block;
+    font-size: .65rem;
+    color: #555;
+    font-weight: 800;
+}
+.carrier:hover {
+    transform: translateY(-2px);
+}
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.step {
+    padding: 22px;
+    border-left: 5px solid var(--yellow);
+    background: white;
+    border-radius: 0 14px 14px 0;
+}
+.step b {
+    font-size: 1.1rem;
+}
+.step p {
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 0;
+}
+/*PRINT & COPY*/
+.table-wrapper {
+    width: 85%;
+    max-width: 1050px;
+    margin: 30px auto;
+    overflow-x: auto;
+    border: 2px solid #75664d;
+    border-radius: 16px;
+    background: #fffdf8;
+}
+table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+th, td {
+    padding: 14px 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid #75664d;
+    border-bottom: 1px solid #75664d;
+}
+th:last-child,
+td:last-child {
+    border-right: none;
+}
+tbody tr:last-child td {
+    border-bottom: none;
+}
+thead th {
+    background: linear-gradient(135deg, #f9d76b, #e8ad19);
+    font-size: 20px;
+    font-weight: bold;
+}
+thead th:first-child {
+    border-top-left-radius: 16px;
+}
+thead th:last-child {
+    border-top-right-radius: 16px;
+}
+th span,
+td span {
+    display: block;
+}
+.english {
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: normal;
+}
+.Service {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+.Service .english {
+    text-align: left;
+}
+.price {
+    font-size: 29px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.price-tag {
+    display: inline-block;
+    padding: 7px 12px;
+    min-width: 125px;
+    background: linear-gradient(135deg, #ffdf65, #f3b500);
+    border-radius: 15px;
+    box-shadow: inset 0 1px 3px #ffffff70;
+}
+.remark {
+    font-size: 17px;
+    line-height: 1.6;
+}
+.remark strong {
+    color: #5b3510;
+}
+tbody tr:nth-child(even) {
+    background: #fff9ed;
+}
+tbody tr:hover {
+    background: #fff0bd;
+    transition: background 0.2s;
+}
+@media (max-width: 600px) {
+        body {
+            padding: 10px;
+        }
+        .price-board {
+            padding: 10px;
+            border-width: 3px;
+            border-radius: 18px;
+        }
+        .board-title {
+            margin-bottom: 15px;
+            padding: 8px 4px;
+        }
+        th, td {
+            padding: 10px 6px;
+        }
+        .service {
+            font-size: 16px;
+        }
+        .price {
+            font-size: 22px;
+        }
+        .price-tag {
+            min-width: 95px;
+            padding: 6px;
+        }
+        .remark {
+            font-size: 14px;
+        }
+    }
+
+       @media print {
+        @page {
+            size: A4 landscape;
+            margin: 8mm;
+        }
+        body {
+            padding: 0;
+            background: white;
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
+    }
+    /*packing*/
+    .packing{
+        background: var(--kraft) repeating-linear-gradient(90deg,rgba(22,19,11,.05)0 2px,transparent 2px 7px);
+    }
+    .packing .wrap {
+        padding-block: 96px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 56px 64px;
+    }
+    .packing .left {
+        flex: 1 1 380px;
+        min-width: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 28px;
+    }
+    .packing .section-head {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 48px;
+    }
+    .checklist {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border: 3px solid var(--ink2);
+        border-radius: 10px;
+        box-shadow: 8px 8px 0 var(--ink2);
+    }
+    .checklist li {
+        display: flex;
+        align-items: center;
+        gap:  14px;
+        padding: 16px 22px;
+        border-bottom: 2px dashed var(--line);
+        font-size: 19px;
+        font-weight: 600;
+    }
+    .checklist li:last-child {
+        border-bottom: 0;
+    }
+    .checklist li::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: var(--yellow);
+        border: 2px solid var(--ink2);
+    }
+    .polaroids {
+        background-color: #fff;
+        padding: 15px 8px 10px 8px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+    }
+
+    .polaroids img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: grayscale(20%) sepia(10%);
+    }
+    .polaroids figcaption {
+        text-align: center;
+        padding: 20px 10px 0px 10px;
+        font-family: 'Charm',cursive;
+        font-size: 22px;
+    }
+    .polaroids:hover {
+        transform: rotate(3deg)scale(1.05);
+        box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+    }
+    /*visit*/
+    .visit  {
+        background-image: url('/HH img/123.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+   .visit .wrap {
+    padding-block: 96px;
+    display: flex;
+    flex-wrap: wrap;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   }
+   .visit .polaroid {
+    background-color: #fff;
+    padding: 15px 8px 30px 8px;
+    margin-bottom: 10%;
+   }
+.visit .polaroid img {
+    border: 1px solid var(--ink2);
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(30%) sepia(10%);
+}
+.polaroid figcaption {
+    padding-top: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+.polaroid:hover {
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+}
+ 
+.hours {
+    flex: 2 1 340px;
+    min-width: 0;
+    background: #713600;
+    border: 3px solid var(--ink);
+    border-radius: 14px;
+    max-width: 475px;
+    height: 600px;
+    margin-right: auto;
+    padding: 24px;
+    box-shadow: 8px 8px 0 var(--ink2),0 15px 30px rgba(0,0,0,0.35);
+}
+.hours:hover {
+    transform: translateY(-6px);
+}
+.hours .eyebrow {
+    color: var(--yellow2);
+    font-size: 28px;
+}
+.hours .time {
+    font-family: var(--display);
+    color: #fff;
+    font-weight: 700;
+    font-size: clamp(40px,4.8vw,60px);
+    line-height: 1.15;
+}
+.hours .welcome {
+    font-size: inherit;
+    font-weight: 400;
+    color: #fff;
+}
+.info {
+    border-top: 3px solid var(--line);
+    color: #fff;
+}
+.info .row {
+    grid-template-columns: 96px (0,1fr);
+     border-bottom-color: var(--line);
+}
+.info .row span {color: var(--yellow2);
+font-size: 20px;}
+.info .row b{
+    font-family: var(--display);
+    font-size: 26px;
+    font-weight: 400;
+}
+.contact {
+    background: var(--ink);
+    color: #fff;
+}
+.contact .wrap {
+    padding-block: 88px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+.contact-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 36px 56px;
+}
+.contact-top .t {
+    flex: 3 1 420px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.contact h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(36px,5vw,68px);
+    line-height: 1.2;
+    color: var(--yellow2);
+    text-wrap: balance;
+}
+.contact .t p {
+    font-size: 18px;
+    color: #e9e6da;
+}
+.contact-list {
+    flex: 2 1 320px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.line-contact {
+   position: fixed;
+   right: 20px;
+   bottom: 20px;
+   width: 60px;
+   height: 60px;
+   background-color: #06c755;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+   z-index: 9999;
+   transition: transform 0.2s ease;
+}
+.line-contact img {
+    width: 38px;
+    height: 38px;
+    display: block;
+}
+.line-contact:hover {
+    transform:scale(1.1);
+}
+.facebook-contact {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 60px;
+    height: 60px;
+    background-color: #1877F2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 9999;
+    transition: transform 0.2s ease;
+}
+.facebook-contact img {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+.facebook-contact:hover {
+    transform:scale(1.1);
+}
+.foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 24px;
+    padding-top: 28px;
+    border-top: 2px solid #3a3526;
+}
+.foot .brand img {
+    width: 44px;
+    height: 44px;
+}
+.foot p {
+    font-size: 14px;
+    color: #cfcab8;
+}
+.foot .brand span {
+    font-family: var(--display);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+  /* มือถือ: เรียงลงเป็นคอลัมน์ */
+  @media (max-width: 640px) {
+    .photo, .info { width: 100%; max-width: 340px; }
+  }
+    
+  }
+ </style>
+</head>
+
+<body>
+้<header class="hero">
+    <div class="wrap">
+    <div class="topbar">
+        <a class="brand" href="#home">
+            <img src="/มาแชล.png" alt="โลโก้เฮงฮับ"  style="width: 80px;height: 80px;"><span><strong>เฮงฮับ</strong><small>รับส่งพัสดุ | ปริ้นท์งาน | ถ่ายเอกสาร | ประกันภัยรถยนต์ | ส่งพัสดุต่างประเทศ</small>
+        </span>
+        </a>
+        <nav class="nav" aria-label="เมนูหลัก">
+            <a href="#services">บริการของเรา</a>
+            <a href="#carriers">ขนส่งที่รองรับ</a>
+            <a href="#visit">เวลาเปิด-ปิด</a>
+            <a href="#how">วิธีใช้บริการ</a>
+        </nav>
+        <a class="cta" href="#contact">ติดต่อร้าน </a>
+    </div>
+</header>
+
+<main>
+    <!--HERO-->
+    <section class="hero-grid" id="home">
+        <div class="hero-body">
+            <div class="hero-text">
+                <span class="tag">ศูนย์รวมขนส่งชั้นนำ 📦</span>
+                <h1>"ส่งพัสดุได้"<em>ทุกค่าย</em>"ที่เดียวจบ"</h1>
+                <p class="lead"><b>บริการพัสดุครบวงจร ส่งไว ใส่ใจทุกกล่อง บริการเป็นกันเอง รับต่อ พ.ร.บ. รถยนต์ ประกันภัยรถยนต์ ชั้น 2+ 3+</b></p>
+                <div class="actions">
+                    <a class="btn btn-dark" href="#services">ดูบริการทั้งหมด</a>
+                    <a class="btn btn-line" href="#visit">
+                        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M12 7v5l3 2"></path>
+                        </svg>
+                        <span class="tabular">เปิด 10.00 น. - 19.00 น.</span>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="slip-wrap">
+                <div class="slip-pos">
+                    <img src="/HH img/henghub.png" alt="โลโก้เฮงฮับ" class="sticker" style="width: 185px;height: 140px;">
+                    <div class="slip">
+                            <div class="slip-head"><b>ใบฝากส่งพัสดุ</b><span class="fragile">FRAGILE</span></div>
+                            <div class="slip-rows">
+                                <div class="row"><span>ผู้ส่ง</span><b>คุณ</b></div>
+                                <div class="row"><span>ผู้รับ</span><b>ทั่วไทย</b></div>
+                                <div class="row"><span>ขนส่ง</span><b>เลือกได้ทุกค่าย</b></div>
+                                <div class="row"><span>ฝากที่</span><b>เฮงฮับ รับส่งพัสดุ</b></div>
+                            </div>
+                            <div class="slip-foot">
+                                <div class="barcode"></div>
+                                <p>ส่งไว ใส่ใจทุกกล่อง ♡</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+           </section>
+           <div class="stripe"></div>
+               <div class="trust">
+        <div class="wrap trust-row">
+            <span><b>รับส่งพัสดุ</b>หลายค่าย 📦</span>
+            <span><b>ต่อ พ.ร.บ.</b>รถยนต์ 🚗 </span>
+            <span><b>ปริ้นท์งาน</b>ถ่ายเอกสาร 🖨️</span>
+        </div>
+    </div>
+        <!--SERVICES-->
+    <section id="services">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="kicker">OUR SERVICES</div>
+                <h2>บริการที่เฮงอับ</h2>
+                <p>ช่วยให้การส่งของของคุณสะดวกยิ่งขึ้น บริการเป็นกันเอง</p>
+            </div>
+            <div class="services">
+                <article class="service">
+                    <div class="service-icon">📦</div>
+                    <h3>รับส่งพัสดุ</h3>
+                    <p>ศุนย์รวมขนส่งชั้นนำ ฝากส่งได้ทุกค่ายที่ร้านเดียว</p>
+                    <a href="#carriers">ขนส่งที่รองรับ</a>
+                </article>
+                <article class="service">
+                    <div class="service-icon">🚗</div>
+                    <h3>ประกันภัยรถยนต์</h3>
+                    <div class="chips">
+                        <span>ชั้น 2+</span>
+                        <span>ชั้น 3+</span>
+                    </div>
+                    <p>เปรียบเทียบแผนประกัน และเทียบความคุ้มครองกับเงื่อนไขของแผนที่พร้อมเลือก</p>
+                    <a href="#contact">สอบถามรายละเอียด</a>
+                </article>
+                <article class="service">
+                    <div class="service-icon">🖨️</div>
+                    <h3>ปริ้นท์งาน · ถ่ายเอกสาร </h3>
+                    <p>ปริ้นท์งาน ถ่ายเอกสาร ขาว-ดำ สี ที่เฮงฮับ</p>
+                    <a href="#printer">อัตราค่าบริการ</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARRIERS-->
+     <section class="carriers" id="carriers">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="kicker">DELIVERY PARTNERS</div>
+                <h2>ขนส่งที่ร้านรองรับ</h2>
+                <P>ส่งได้ทุกค่าย เลือกขนส่งที่ต้องการได้เลย</P>
+            </div>
+            <div class="carrier-grid">
+                <div class="carrier"><a href="https://track.thailandpost.co.th/ rel="noopener noreferrer target="_blank"" title="เช็คพัสดุไปรษณีย์"><img src="/HH img/EMS.jpeg" alt="ไปรษณีย์ไทย EMS" style="width: 135.22px;height: 78px;"></a></div>
+                <div class="carrier"><a href="https://www.flashexpress.co.th/fle/tracking" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ FLASH"><img src="/HH img/FLASH.png" alt="FLASH EXPRESS" style="width: 135.22px;height: 78px;"></a></div>
+                <div class="carrier"><a href="https://th.kex-express.com/th/track-parcel" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ KEX"><img src="/HH img/KEX.png" alt="KEX" style="width: 135.22px;height: 78px;"></a></div>
+                <div class="carrier"><a href="https://spx.co.th/th" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ SPX"><img src="/HH img/SPX.jpeg" alt="SPX" style="width: 135.22px;height: 78px;"></a></div>
+                <div class="carrier"><a href="https://www.dhl.com/th-th/home/tracking.html" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ DHL"><img src="/HH img/DHL.jpeg" alt="DHL" style="width: 135.22px;height: 78px;"></a></div>
+                <div class="carrier"><a href="https://www.jtexpress.co.th/" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ J&T"><img src="/HH img/J&T.jpeg" alt="J&T EXPRESS" style="width: 135.22px;height: 78px;"></a></div>
+                <div class="carrier"><a href="https://www.best-inc.co.th/track" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ BEST"><img src="/HH img/BEST.png" alt="BEST EXPRESS" style="width: 135.22px;height: 78px;"></a></div>      
+            </div>
+        </div>
+    </section>
+    <section id="how">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="kicker">HOW IT WORKS</div>
+                <h2>ใช้บริการง่ายๆ 3 ขั้นตอน</h2>
+                <p>เตรียมของให้พร้อม หรือแวะมาที่ร้านเฮงฮับ</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <b>1 · เตรียมพัสดุ</b>
+                    <p>แพ็คของให้เรียบร้อย หรือเลือกซื้ออุปกรณ์แพ็คกิ้งได้ที่ร้าน</p>
+                </div>
+                <div class="step">
+                    <b>2 · แจ้งปลายทาง</b>
+                    <p>เตรียมบัตรประชาชนของผู่ส่ง ชื่อ-นามสกุล เบอร์โทรและที่อยู่ของผู้รับให้ครบถ้วน</p>
+                </div>
+                <div class="step">
+                    <b>3 · เลือกขนส่ง</b>
+                    <p>สอบถามตัวเลือก ราคา และเงื่อนไขก่อนส่ง จากนั้นรับหลักฐานการส่งไว้</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--PRINT AND COPY-->
+    <section id="printer">
+        <div class="warp">
+            <div class="section-head">
+                <div class="kicker">PRINT AND COPY SERVICE RATES</div>
+                <h3>อัตราค่าบริการปริ้นท์งานและถ่ายเอกสาร</h3>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 24%;">
+                                <span>ประเภทบริการ</span>
+                                <span class="english">SERVICE TYPE</span>
+                            </th>
+                            <th style="width: 19%;">
+                                <span>ปกติ / ใบแรก</span>
+                                <span class="english">REGULAR / FIRST PAGE</span>
+                            </th>
+                            <th style="width: 18%;">
+                                <span>10 แผ่นขึ้นไป</span>
+                                <span class="english">10+ SHEETS</span>
+                            </th>
+                            <th style="width: 18%;">
+                                <span>50 แผ่นขึ้นไป</span>
+                                <span class="english">50+ SHEETS</span>
+                            </th>
+                            <th style="width: 21%;">
+                                <span>หมายเหตุ</span>
+                                <span class="english">REMARKS</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="Service">
+                                <span>1.ถ่ายเอกสารขาวดำ</span>           
+                                    <span class="english">B&W Copy</span>
+                            </td>
+                            <td class="price">2 บาท</td>
+                            <td class="price">
+                                <span class="price-tag">1.50 บาท</span>
+                            </td>
+                            <td class="price">
+                                <span class="price-tag">1 บาท</span>
+                            </td>
+                            <td class="remark">-</td>
+                        </tr> 
+                        <tr>
+                             <td class="Service">
+                                <span>2. ปริ้นขาวดำ</span>
+                                <span class="english">B&W Print</span>
+                            </td>
+                             <td class="price">4 บาท</td>
+                             <td class="price">
+                                    <span class="price-tag">1.75 บาท</span>
+                            </td>
+                            <td class="price">
+                                <span class="price-tag">1.50 บาท</span>
+                            </td>
+                            <td class="remark">
+                                <strong>*ใบต่อไป เนื้อหาเดียวกัน</strong>
+                                2 บาท/แผ่น
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Service">
+                                <span>3. ถ่ายเอกสารสี</span>
+                                <span class="english">Color Copy</span>
+                            </td>
+                            <td class="price">10 บาท</td>
+                            <td class="price">
+                                <span class="price-tag">8 บาท</span>
+                            </td>
+                            <td class="price">
+                                <span class="price-tag">7 บาท</span>
+                            </td>
+                            <td class="remark">—</td>
+                        </tr>
+                        <tr>
+                            <td class="Service">
+                                <span>4. ปริ้นสี (เต็มหน้า)</span>
+                                <span class="english">Color Print (Full Page)</span>
+                            </td>
+                            <td class="price">15 บาท</td>
+                            <td class="price">
+                                <span class="price-tag">13 บาท</span>
+                            </td>
+                            <td class="price">
+                                <span class="price-tag">12 บาท</span>
+                            </td>
+                            <td class="remark">—</td>
+                        </tr>
+                        <tr>
+                            <td class="Service">
+                                <span>5. ปริ้นสี (ครึ่งหน้า)</span>
+                                <span class="english">Color Print (Half Page)</span>
+                            </td>
+                            <td class="price">10–15 บาท</td>
+                            <td class="price">—</td>
+                            <td class="price">—</td>
+                            <td class="remark">
+                                <strong>*ราคาขึ้นอยู่กับ</strong>
+                                ปริมาณหมึก
+                            </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <div class="stripe"></div>
+    <section class="packing" id="packing">
+        <div class="wrap">
+            <div class="left">
+                <div class="section-head" style="padding: 0;">
+                    <h2 class="h2">อุปกรณ์แพ็คกิ้ง</h2>
+                    <span class="eyebrow">มีขนาดกล่องให้เลือกมากมาย</span>
+                    </div>  
+                    <ul class="checklist">
+                        <li>
+                            กล่องพัสดุ
+                        </li>
+                        <li>
+                            บับเบิลกันกระแทก
+                        </li>
+                        <li>
+                            เทปกาว 
+                        </li>
+                        <li>
+                            ซองเอกสาร    
+                        </li>
+                        <li>
+                            ซองพลาสติก    
+                        </li>
+                        </ul> 
+            </div> 
+                <figure class="polaroids">
+                    <img src="/HH img/indoor.jpg" alt="ตราชั่งกับกล่องพัสดุ" " style="width: 252px;height: 336px;" loading="lazy">
+                     <figcaption>😊</figcaption>
+                </figure>
+        </div>   
+    </section>
+    <div class="stripe"></div>
+    <!--VISIT-->
+    <section class="visit" >
+  <div class="wrap">
+    <div class="polaroid">
+    <figure>
+      <img src="/HH img/หน้าร้าน.png" alt="หน้าร้านเฮงฮับ ">
+      <figcaption id="visit">หน้าร้านเฮงฮับ มีที่จอดรถสำหรับลูกค้า</figcaption>
+    </figure>
+    </div>
+    <div class="timetable" >
+    <div class="hours">
+      <span class="eyebrow">เปิดบริการ<br></span>
+      <p class="time tabular">10.00 - 19.00</p>
+      <p class="welcome"><br>ยินดีต้อนรับ ขอบคุณที่ใช้บริการ<br><br></p>
+      <div class="info">
+        <div class="row"><span>วันทำการ</span><b class="fill">เปิดบริการทุกวัน<br><br></b></div>
+        <div class="row"><span><br>ที่อยู่</span><b class="fill"><br>123/17 หมู่ 5 ต.สุรศักดิ์ อ.ศรีราชา จ.ชลบุรี 20110 <br><br></b></div>
+        <div class="row"><span><br>โทร.</span><b><br>062-521-2788</b></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<!--CONTACT-->
+<div class="stripe"></div>
+<footer class="contact" id="contact">
+    <div class="wrap">
+        <div class="contact-top">
+            <div  class="t">
+                <h2>ส่งไว ใส่ใจทุกกล่อง บริการเป็นกันเอง💛</h2>
+                <p>แวะเข้ามาที่ร้านได้ตามเวลาทำการ หรือติดต่อสอบถามเข้าก่อนก็ได้</p>
+            </div>
+            <div class="contact-list">
+                <!--LINE OA-->
+                <div class="contact-item">
+                    <span class="line-contact" title="ติดต่อเฮงฮับผ่าน LINE OA"><a href="https://line.me/R/ti/p/@033vcpsb" class="social-btn line-btn" target="_blank" rel="noopener noreferrer" aria-label="ติดต่อเฮงฮับผ่าน LINE OA"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE"></a></span>
+                    <!--Facebook-->
+                    <div class="contact-item">
+                    <span class="facebook-contact" title="ติดต่อเฮงฮับผ่าน Facebook"><a href="https://www.facebook.com/henghub2026/" class="social-btn facebook-btn" target="_blank" rel="noopener noreferrer" aria-label="ติดต่อเฮงฮับผ่าน Facebook"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook"></a></span>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="brand">
+                <img src="/มาแชล.png" alt="โลโก้เฮงฮับ" style="width: 36px;height: 36px;">
+                <span>เฮงฮับ<small>พัสดุถึงไว บริการด้วยใจ</small></span>
+            </div>
+            <p>รับส่งพัสดุ | ปริ้นท์งาน | ถ่ายเอกสาร | ประกันภัยรถยนต์ | ส่งพัสดุต่างประเทศ</p>
+        </div>
+        <div id="contact-details">
+            <b>ช่องทางติดต่อร้าน</b>
+            <p><a href="tel:+6662-521-2788">เบอร์โทรศัพท์</a>·<a href="https://line.me/R/ti/p/@033vcpsb" target="_blank" rel="noopener noreferrer" aria-label="ติดต่อเฮงฮับผ่าน LINE OA">LINE </a>·<a href="https://www.facebook.com/henghub2026/" target="_blank" rel="noopener noreferrer" aria-label="ติดต่อเฮงฮับผ่าน Facebook">Facebook</a></p>
+            <address>123/17 หมู่ 5 ต.สุรศักดิ์ อ.ศรีราชา จ.ชลบุรี 20110</address>
+            <div class="footer-note">&copy;HENGHUB เฮงฮับ — เว็บไซต์ต้นแบบสำหรับปรับแต่ง</div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
