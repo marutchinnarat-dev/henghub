@@ -898,48 +898,6 @@ font-size: 20px;}
     .photo, .info { width: 100%; max-width: 340px; }
   }
     
- /* ===== เฮงฮับ – mobile fix =====
-   วางต่อท้ายใน <style> (หลังโค้ด CSS เดิมทั้งหมด) */
-
-
-html, body { overflow-x: clip; max-width: 100%; }
-
-
-body { padding-bottom: 150px; }
-
-/* ตาราง (ราคาถ่ายเอกสาร/ปริ้นท์) เลื่อนซ้าย-ขวาได้ ไม่ถูกตัด */
-table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-/* ชื่อร้าน/คำอธิบายใต้โลโก้ ไม่ตัดคำกลางประโยค */
-.brand small { text-wrap: balance; letter-spacing: 0; }
-
-@media (max-width: 768px) {
-
-  /* ---- Header ---- */
-  .topbar { gap: 12px 16px; }
-  .topbar .cta { margin: 0 auto 0 0; }
-  .nav { gap: 6px 20px; justify-content: center; }
-
-  /* ---- Hero: เรียงเป็นคอลัมน์เดียว ---- */
-  .hero-grid { grid-template-columns: 1fr; margin-left: 0; gap: 16px; }
-  .hero-body { padding: 32px 0 56px; gap: 32px; }
-  .hero-text { flex-basis: 100%; }
-  h1 { font-size: clamp(38px, 11vw, 56px); }
-  h1 em { margin: .12em 0; }
-  .lead { font-size: 18px; }
-
-  /* ---- ใบฝากส่ง (slip) ---- */
-  .slip-wrap { flex-basis: 100%; padding: 44px 16px 28px 16px; }
-  .slip { transform: rotate(1deg); box-shadow: 8px 8px 0 var(--ink2); }
-  .slip-rows { padding: 4px 16px; }
-  .row { grid-template-columns: 76px minmax(0, 1fr); padding: 12px 0; }
-  .row b { font-size: 21px; }
-
-  /* ---- มงกุฎ: เล็กลง ไม่ทับแถวผู้ส่ง/ผู้รับ ---- */
-  .sticker { width: 92px; height: 92px; top: -44px; left: -10px; }
-  .slip-head { padding: 12px 14px 12px 92px; }
-  .slip-head b { font-size: 18px; }
-}
  </style>
 </head>
 
