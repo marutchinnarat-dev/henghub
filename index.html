@@ -898,272 +898,47 @@ font-size: 20px;}
     .photo, .info { width: 100%; max-width: 340px; }
   }
     
- 
-/* =========================================
-   MOBILE FIX — HENGHUB
-   แก้เลย์เอาต์บนมือถือโดยเฉพาะ
-========================================= */
+ /* ===== เฮงฮับ – mobile fix =====
+   วางต่อท้ายใน <style> (หลังโค้ด CSS เดิมทั้งหมด) */
 
-/* ป้องกันเนื้อหาล้นหน้าจอ */
-html {
-    width: 100%;
-    overflow-x: clip;
-}
 
-body {
-    width: 100%;
-    min-width: 0;
-    overflow-x: clip;
-}
+html, body { overflow-x: clip; max-width: 100%; }
 
-img {
-    max-width: 100%;
-}
 
-/* แก้กล่องเนื้อหาหลัก */
-.wrap {
-    width: min(1160px, 92%);
-    max-width: 100%;
-}
+body { padding-bottom: 150px; }
 
-/* แก้ส่วนหัวและเมนู */
-.topbar {
-    gap: 14px;
-}
+/* ตาราง (ราคาถ่ายเอกสาร/ปริ้นท์) เลื่อนซ้าย-ขวาได้ ไม่ถูกตัด */
+table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
-.brand {
-    min-width: 0;
-    max-width: 100%;
-}
+/* ชื่อร้าน/คำอธิบายใต้โลโก้ ไม่ตัดคำกลางประโยค */
+.brand small { text-wrap: balance; letter-spacing: 0; }
 
-.brand strong {
-    line-height: 1.25;
-}
+@media (max-width: 768px) {
 
-.brand small {
-    overflow-wrap: anywhere;
-}
+  /* ---- Header ---- */
+  .topbar { gap: 12px 16px; }
+  .topbar .cta { margin: 0 auto 0 0; }
+  .nav { gap: 6px 20px; justify-content: center; }
 
-.nav {
-    gap: 10px 16px;
-}
+  /* ---- Hero: เรียงเป็นคอลัมน์เดียว ---- */
+  .hero-grid { grid-template-columns: 1fr; margin-left: 0; gap: 16px; }
+  .hero-body { padding: 32px 0 56px; gap: 32px; }
+  .hero-text { flex-basis: 100%; }
+  h1 { font-size: clamp(38px, 11vw, 56px); }
+  h1 em { margin: .12em 0; }
+  .lead { font-size: 18px; }
 
-/* แก้ส่วน Hero ไม่ให้บังคับ 2 คอลัมน์ */
-.hero-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-    margin-left: 0;
-    width: 100%;
-}
+  /* ---- ใบฝากส่ง (slip) ---- */
+  .slip-wrap { flex-basis: 100%; padding: 44px 16px 28px 16px; }
+  .slip { transform: rotate(1deg); box-shadow: 8px 8px 0 var(--ink2); }
+  .slip-rows { padding: 4px 16px; }
+  .row { grid-template-columns: 76px minmax(0, 1fr); padding: 12px 0; }
+  .row b { font-size: 21px; }
 
-.hero-body {
-    gap: 28px;
-    padding: 32px 0 40px;
-}
-
-.hero-text {
-    flex: 1 1 100%;
-    width: 100%;
-    min-width: 0;
-}
-
-h1 {
-    font-size: clamp(36px, 9vw, 58px);
-    overflow-wrap: anywhere;
-}
-
-.lead {
-    max-width: 100%;
-    font-size: 17px;
-}
-
-/* แก้ใบปะหน้าพัสดุ */
-.slip-wrap {
-    flex: 1 1 100%;
-    width: 100%;
-    min-width: 0;
-    padding: 42px 10px 24px;
-}
-
-.slip-pos {
-    width: 100%;
-    max-width: 480px;
-    min-width: 0;
-}
-
-.slip {
-    width: 100%;
-    transform: none;
-    border-radius: 10px;
-    box-shadow: 6px 6px 0 var(--ink2);
-}
-
-.sticker {
-    width: clamp(72px, 22vw, 110px);
-    height: auto;
-    aspect-ratio: 1;
-    top: -32px;
-    left: 8px;
-    transform: rotate(-8deg);
-}
-
-.slip-head {
-    gap: 8px;
-    padding: 14px 12px 14px 92px;
-    flex-wrap: wrap;
-}
-
-.slip-head b {
-    font-size: clamp(15px, 4vw, 20px);
-}
-
-.fragile {
-    font-size: 10px;
-}
-
-.slip-rows {
-    padding: 8px 14px 4px;
-}
-
-.row {
-    grid-template-columns: 70px minmax(0, 1fr);
-    gap: 8px;
-    padding: 12px 0;
-}
-
-.row span {
-    font-size: 13px;
-}
-
-.row b {
-    font-size: clamp(16px, 4.5vw, 22px);
-    overflow-wrap: anywhere;
-}
-
-.slip-foot {
-    padding: 8px 14px 16px;
-}
-
-.barcode {
-    max-width: 100%;
-    height: 48px;
-}
-
-.slip-foot p {
-    font-size: 13px;
-}
-
-/* แก้การ์ดบริการ */
-.services {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-}
-
-.service {
-    min-width: 0;
-    padding: 16px;
-    border-radius: 14px;
-    box-shadow: 4px 4px 0 var(--ink);
-}
-
-.service-icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 12px;
-    font-size: 1.5rem;
-}
-
-/* ปรับระยะห่างแต่ละ section */
-section {
-    padding: 42px 0;
-}
-
-.section-head {
-    padding-inline: 8px;
-    margin-bottom: 24px;
-}
-
-.section-head h2 {
-    font-size: clamp(28px, 7vw, 40px);
-    line-height: 1.25;
-}
-
-/* ปุ่มติดต่อ Facebook และ LINE */
-.social-float,
-.floating-social {
-    max-width: calc(100vw - 20px);
-}
-
-/* จอมือถือขนาดเล็ก */
-@media (max-width: 480px) {
-    .wrap {
-        width: 92%;
-    }
-
-    .brand {
-        gap: 8px;
-        letter-spacing: 0;
-    }
-
-    .brand-mark {
-        width: 64px;
-        height: 64px;
-        flex-shrink: 0;
-    }
-
-    .brand strong {
-        font-size: 25px;
-    }
-
-    .brand small {
-        font-size: 11px;
-        line-height: 1.6;
-    }
-
-    .nav {
-        justify-content: center;
-        gap: 8px 14px;
-        font-size: 14px;
-    }
-
-    .hero-body {
-        padding: 24px 0 30px;
-    }
-
-    .actions {
-        gap: 10px;
-        width: 100%;
-    }
-
-    .btn {
-        min-height: 46px;
-        padding: 0 18px;
-        font-size: 15px;
-    }
-
-    .services {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .slip-wrap {
-        padding-inline: 6px;
-    }
-
-    .row {
-        grid-template-columns: 62px minmax(0, 1fr);
-        gap: 7px;
-    }
-}
-
-/* แท็บเล็ต */
-@media (min-width: 481px) and (max-width: 768px) {
-    .hero-grid {
-        gap: 20px;
-    }
-
-    .hero-body {
-        padding: 36px 0 44px;
-    }
+  /* ---- มงกุฎ: เล็กลง ไม่ทับแถวผู้ส่ง/ผู้รับ ---- */
+  .sticker { width: 92px; height: 92px; top: -44px; left: -10px; }
+  .slip-head { padding: 12px 14px 12px 92px; }
+  .slip-head b { font-size: 18px; }
 }
  </style>
 </head>
