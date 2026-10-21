@@ -37,10 +37,6 @@
     }
     html {
         scroll-behavior: smooth;
-        width: 100%;
-        max-width: 100%;
-        overflow-x: clip;
-
     }
     body {
         margin: 0;
@@ -129,16 +125,20 @@
         background: var(--yellow2)
         
     }
+    .hero-section {
+        background: var(--cream);
+        padding: 24px 0;
+    }
     .hero-grid {
         display: grid;
         grid-template-columns: 1fr 1.03fr;
         align-items: center;
         gap: 30px;
-        margin-left: 30px;
-        background: var(--cream);
     }
     .hero .wrap {
-        padding-top: 20px;    }
+        padding-top: 20px;
+        padding-bottom: 14px;
+    }
     .topbar {
         display: flex;
         flex-wrap: wrap;
@@ -372,21 +372,12 @@
     color: var(--yellow);
 } 
 section {
-    padding: 42px 0;
-}
-section .wrap {
-    width: 92%;
-    max-width: 1160px;
-    margin-inline: auto;
+    padding: 70px 0;
 }
 .section-head {
     text-align: center;
     max-width: 680px;
     margin: 0 auto 32px;
-    width: 100%;
-    max-width: 680px;
-    padding: 0 4px;
-    margin: 0 auto 26px;
 }
 .kicker {
     color: #9a7600;
@@ -395,18 +386,16 @@ section .wrap {
     letter-spacing: .08em;
 }
 .section-head h2 {
-    font-size: clamp(26px,7vw,36px);
-    line-height: 1.3;
+    font-size: clamp(2rem,4vw,3.2rem);
+    line-height: 1.1;
     margin: 8px 0 12px;
     letter-spacing: -.04em;
-    overflow-wrap:anywhere;
 }
 .section-head p {
     color: var(--muted);
     font-weight: 600;
     line-height: 1.7;
     margin: 0;
-    font-size: 15px;
 }
 .services {
     display: grid;
@@ -595,38 +584,7 @@ tbody tr:hover {
     background: #fff0bd;
     transition: background 0.2s;
 }
-@media (max-width: 600px) {
-        body {
-            padding: 10px;
-        }
-        .price-board {
-            padding: 10px;
-            border-width: 3px;
-            border-radius: 18px;
-        }
-        .board-title {
-            margin-bottom: 15px;
-            padding: 8px 4px;
-        }
-        th, td {
-            padding: 10px 6px;
-        }
-        .service {
-            font-size: 16px;
-        }
-        .price {
-            font-size: 22px;
-        }
-        .price-tag {
-            min-width: 95px;
-            padding: 6px;
-        }
-        .remark {
-            font-size: 14px;
-        }
-    }
-
-       @media print {
+@media print {
         @page {
             size: A4 landscape;
             margin: 8mm;
@@ -715,7 +673,7 @@ tbody tr:hover {
     }
     /*visit*/
     .visit  {
-        background-image: url('back.jpg');
+        background-image: url('/back.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
@@ -786,7 +744,7 @@ tbody tr:hover {
     color: #fff;
 }
 .info .row {
-    grid-template-columns: 96px (0,1fr);
+    grid-template-columns: 96px minmax(0,1fr);
      border-bottom-color: var(--line);
 }
 .info .row span {color: var(--yellow2);
@@ -913,354 +871,159 @@ font-size: 20px;}
     .photo, .info { width: 100%; max-width: 340px; }
   }
     
-/* =========================================
-   MOBILE RESPONSIVE — HENGHUB
-   ปรับหน้าเว็บสำหรับมือถือและ iPhone
-========================================= */
+ 
+/* =========================================================
+   RESPONSIVE FIX — เฮงฮับ
+   (เขียนใหม่ แยก media query ชัดเจน ไม่กระทบหน้าจอคอม)
+   ========================================================= */
+html, body { overflow-x: clip; }
 
-/* ป้องกันเนื้อหาล้นหน้าจอ */
-html {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: clip;
-    -webkit-text-size-adjust: 100%;
+/* ---------- ใช้ทุกขนาดจอ ---------- */
+.brand-mark { width: 80px; height: 80px; flex-shrink: 0; object-fit: contain; }
+.brand > span { min-width: 0; }
+.brand small span, .foot-tag span { white-space: nowrap; }          /* ไม่ตัดคำกลางประโยค */
+.sticker { width: 185px; height: 140px; object-fit: contain; }
+.carrier a { display: block; width: 100%; }
+.carrier img { width: 100%; height: 78px; object-fit: contain; }   /* กันโลโก้ขนส่งเบี้ยว */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.chips span { background: var(--yellow); border: 2px solid var(--ink); border-radius: 999px; padding: 2px 12px; font-weight: 700; font-size: .9rem; }
+.polaroids img { aspect-ratio: 3 / 4; object-fit: cover; }
+.timetable { width: 100%; max-width: 475px; }
+
+/* กดเมนูแล้วหัวข้อไม่โดน header (sticky) บัง — เฉพาะจอคอม */
+@media (min-width: 769px) {
+    html { scroll-padding-top: 150px; }
+    .topbar { gap: 12px 24px; }
+    .nav { gap: 8px 20px; }
+    .slip-head { padding-left: 150px; }      /* เว้นที่ให้มงกุฎ ไม่ทับชื่อใบฝากส่ง */
 }
 
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: clip;
-}
+/* ---------- มือถือ / แท็บเล็ตเล็ก ---------- */
+@media (max-width: 768px) {
 
-img {
-    max-width: 100%;
-    height: auto;
-}
+    /* header: ไม่ sticky (เดิมกินพื้นที่ ~1/4 ของจอตลอดเวลา) */
+    header { position: static; }
+    .hero .wrap { padding-top: 14px; padding-bottom: 16px; }
+    .topbar { gap: 12px; }
+    .brand { gap: 10px; letter-spacing: 0; }
+    .brand-mark { width: 64px; height: 64px; }
+    .brand strong { font-size: 26px; line-height: 1.2; }
+    .brand small { font-size: 12px; line-height: 1.5; letter-spacing: 0; }
+    .nav { width: 100%; justify-content: center; gap: 6px 18px; font-size: 15px; }
+    .cta { width: 100%; justify-content: center; }
 
-/* แก้ความกว้างของเนื้อหาหลัก */
-.wrap {
-    width: 92%;
-    max-width: 1160px;
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 0;
-}
+    /* hero */
+    .hero-section { padding: 0; }
+    .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .hero-body { padding: 28px 0 8px; gap: 24px; }
+    .hero-text { flex: 1 1 100%; gap: 18px; }
+    h1 { font-size: clamp(36px, 10vw, 56px); }
+    h1 em { margin: .12em .1em; }
+    .lead { font-size: 17px; max-width: 100%; }
+    .btn { min-height: 46px; padding: 0 18px; font-size: 15px; }
 
-/* แก้ส่วนหัวและเมนู */
-header {
-    width: 100%;
-}
+    /* ใบฝากส่ง + มงกุฎ */
+    .slip-wrap { padding: 48px 8px 36px; }
+    .slip { transform: none; box-shadow: 6px 6px 0 var(--ink2); }
+    .sticker { width: 104px; height: 78px; top: -38px; left: -6px; }
+    .slip-head { padding: 12px 12px 12px 108px; gap: 8px; }
+    .slip-head b { font-size: clamp(15px, 4.6vw, 18px); white-space: nowrap; }
+    .fragile { font-size: 10px; padding: 2px 6px; }
+    .slip-rows { padding: 4px 16px; }
+    .row { grid-template-columns: 70px minmax(0, 1fr); gap: 8px; padding: 12px 0; }
+    .row b { font-size: 21px; }
+    .barcode { height: 48px; }
 
-.topbar {
-    gap: 12px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+    /* ทั่วไป */
+    section { padding: 44px 0; }
+    .section-head { margin-bottom: 24px; }
+    .section-head h2 { font-size: clamp(28px, 7.5vw, 40px); line-height: 1.25; letter-spacing: 0; }
 
-.brand {
-    min-width: 0;
-    max-width: 100%;
-    gap: 10px;
-}
+    /* บริการ */
+    .services { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .service { padding: 20px; box-shadow: 4px 4px 0 var(--ink); }
+    .service-icon { width: 52px; height: 52px; margin-bottom: 14px; }
 
-.brand-mark {
-    width: 56px;
-    height: 56px;
-    flex-shrink: 0;
-}
+    /* ขนส่ง */
+    .carrier-grid { gap: 8px; }
+    .carrier { min-height: 72px; padding: 6px; }
+    .carrier img { height: 56px; }
 
-.brand strong {
-    font-size: clamp(22px, 5vw, 30px);
-    line-height: 1.3;
-}
+    /* ขั้นตอน: 1 คอลัมน์ (เดิม 3 คอลัมน์ ตัวหนังสือแตกทีละคำ) */
+    .steps { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    .step { padding: 16px 18px; background: var(--cream); }
 
-.brand small {
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-.nav {
-    min-width: 0;
-    max-width: 100%;
-}
-
-/* แก้ Hero ไม่ให้ดันหน้าเว็บออกด้านข้าง */
-.hero,
-.hero-grid,
-.hero-body,
-.hero-text,
-.slip-wrap,
-.slip-pos {
-    min-width: 0;
-    max-width: 100%;
-}
-
-.hero-grid {
-    margin-left: 0;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-}
-
-.hero-body {
-    gap: 28px;
-    padding: 32px 0 44px;
-}
-
-.hero-text {
-    flex: 1 1 100%;
-    width: 100%;
-    gap: 18px;
-}
-
-h1 {
-    font-size: clamp(36px, 9vw, 64px);
-    line-height: 1.25;
-    max-width: 100%;
-    overflow-wrap: anywhere;
-}
-
-h1 em {
-    max-width: 100%;
-    margin: 0.15em 0.05em;
-    padding: 0.08em 0.15em;
-}
-
-.lead {
-    max-width: 100%;
-    font-size: clamp(16px, 4vw, 19px);
-    line-height: 1.75;
-}
-
-.actions {
-    width: 100%;
-    gap: 10px;
-}
-
-.btn {
-    max-width: 100%;
-    padding: 0 18px;
-    font-size: 16px;
-}
-
-/* ปรับใบฝากส่งพัสดุ */
-.slip-wrap {
-    width: 100%;
-    flex: 1 1 100%;
-    padding: 42px 8px 20px;
-}
-
-.slip-pos {
-    width: 100%;
-}
-
-.slip {
-    width: 100%;
-    border-radius: 10px;
-    transform: none;
-}
-
-.sticker {
-    width: clamp(88px, 24vw, 125px);
-    height: auto;
-    top: -35px;
-    left: -5px;
-    transform: rotate(-7deg);
-}
-
-.slip-head {
-    gap: 8px;
-    padding: 12px 12px 12px 85px;
-    flex-wrap: wrap;
-}
-
-.slip-head b {
-    font-size: clamp(16px, 4.5vw, 20px);
-}
-
-.slip-rows {
-    padding: 8px 14px 4px;
-}
-
-.row {
-    grid-template-columns: 76px minmax(0, 1fr);
-    gap: 8px;
-    padding: 12px 0;
-}
-
-.row span {
-    font-size: 13px;
-}
-
-.row b {
-    font-size: clamp(17px, 4.5vw, 22px);
-    overflow-wrap: anywhere;
-}
-
-.slip-foot {
-    padding: 8px 14px 18px;
-}
-
-/* ปรับแถบจุดเด่น */
-.trust-row {
-    gap: 8px;
-    padding: 0 8px;
-}
-
-.trust-row span {
-    font-size: 13px;
-    padding: 7px 10px;
-}
-
-/* ปรับหัวข้อและการ์ดบริการ */
-section {
-    padding: 42px 0;
-}
-
-.section-head {
-    padding: 0 8px;
-    margin-bottom: 26px;
-}
-
-.section-head h2 {
-    font-size: clamp(27px, 7vw, 36px);
-    line-height: 1.3;
-}
-
-.section-head p {
-    font-size: 15px;
-}
-
-.services {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
-}
-
-.service {
-    min-width: 0;
-    padding: 20px;
-    box-shadow: 4px 4px 0 var(--ink);
-}
-
-.service:hover {
-    transform: none;
-}
-
-/* ปรับหน้าจอมือถือขนาดเล็ก */
-@media screen and (max-width: 480px) {
-
-    .wrap {
-        width: 90%;
+    /* ตารางราคา → การ์ด */
+    .table-wrapper { width: 100%; margin: 16px 0 0; border: 0; border-radius: 0; background: none; overflow: visible; }
+    table { display: block; min-width: 0; }
+    thead { display: none; }
+    tbody { display: grid; gap: 16px; }
+    tbody tr, tbody tr:nth-child(even), tbody tr:hover {
+        display: block; background: #fffdf8; overflow: hidden;
+        border: 2px solid #75664d; border-radius: 14px; box-shadow: 4px 4px 0 var(--ink);
     }
-
-    .topbar {
-        align-items: flex-start;
+    td {
+        display: flex; justify-content: space-between; align-items: center; gap: 12px;
+        text-align: right; border: 0; border-bottom: 1px dashed #cdbf9f; padding: 10px 14px;
     }
+    td:last-child { border-bottom: 0; }
+    td::before { content: attr(data-label); flex: 0 0 auto; max-width: 50%; text-align: left; font-size: 14px; font-weight: 600; color: var(--muted2); }
+    td.Service { display: block; text-align: left; font-size: 18px; background: linear-gradient(135deg, #f9d76b, #e8ad19); border-bottom: 2px solid #75664d; }
+    td.Service::before, td.empty { display: none; }
+    .price { font-size: 22px; }
+    .price-tag { min-width: 0; padding: 4px 12px; }
+    td.remark { display: block; font-size: 14px; text-align: left; }
+    td.remark::before { display: block; margin-bottom: 2px; max-width: none; }
 
-    .brand {
-        gap: 8px;
-    }
+    /* อุปกรณ์แพ็คกิ้ง */
+    .packing, .visit { padding: 0; }
+    .packing .wrap { padding-block: 48px; gap: 32px; }
+    .packing .left { flex: 1 1 100%; flex-direction: column; gap: 16px; }
+    .packing .section-head { padding-bottom: 0; text-align: left; margin: 0; }
+    .checklist li { font-size: 17px; padding: 12px 16px; }
+    .polaroids { margin: 0 auto; width: min(100%, 260px); }
 
-    .brand-mark {
-        width: 48px;
-        height: 48px;
-    }
+    /* หน้าร้าน / เวลาเปิด-ปิด */
+    .visit { background-attachment: scroll; }        /* iOS ไม่รองรับ fixed */
+    .visit .wrap { width: min(1160px, 92%); padding-block: 48px; }
+    .visit .polaroid { width: 100%; max-width: 420px; margin-bottom: 28px; }
+    .timetable { max-width: 100%; }
+    .hours { height: auto; max-width: 100%; margin: 0 auto; padding: 20px; box-shadow: 6px 6px 0 var(--ink2), 0 15px 30px rgba(0,0,0,.35); }
+    .hours .eyebrow { font-size: 22px; }
+    .info .row { grid-template-columns: 84px minmax(0, 1fr); }
+    .info .row span { font-size: 17px; }
+    .info .row b { font-size: 20px; }
 
-    .brand strong {
-        font-size: 23px;
-    }
+    /* ติดต่อ + ท้ายหน้า */
+    .contact .wrap { padding-block: 48px 24px; gap: 32px; }
+    .contact-top { gap: 20px; }
+    .contact-top .t { flex-basis: 100%; }
+    .contact-list { flex: 0 0 0; }
+    .foot { flex-direction: column; align-items: flex-start; }
 
-    .brand small {
-        font-size: 10px;
-        letter-spacing: 0;
-    }
-
-    .nav {
-        justify-content: center;
-        gap: 8px 12px;
-        font-size: 14px;
-    }
-
-    .cta {
-        min-height: 40px;
-        padding: 0 14px;
-        font-size: 14px;
-    }
-
-    .hero-body {
-        padding: 26px 0 36px;
-    }
-
-    .hero-text {
-        gap: 16px;
-    }
-
-    .tag {
-        font-size: 12px;
-    }
-
-    .slip-head {
-        padding-left: 75px;
-    }
-
-    .row {
-        grid-template-columns: 66px minmax(0, 1fr);
-        gap: 6px;
-    }
-
-    .service {
-        padding: 18px;
-    }
+    /* ปุ่มลอย LINE / Facebook: เล็กลง ชิดมุม บังเนื้อหาน้อยลง */
+    .line-contact { width: 46px; height: 46px; right: 12px; bottom: 14px; }
+    .line-contact img { width: 30px; height: 30px; }
+    .facebook-contact { width: 46px; height: 46px; right: 12px; bottom: 68px; }
+    .facebook-contact img { width: 46px; height: 46px; }
 }
 
-/* แก้ปุ่มติดต่อที่ลอยอยู่มุมจอ
-   ใช้กับปุ่มที่มีคลาส social-float */
-.social-float {
-    position: fixed;
-    right: 14px;
-    bottom: 20px;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: calc(100vw - 28px);
-}
-
-.social-float a {
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.social-float img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-@media screen and (max-width: 480px) {
-    .social-float {
-        right: 12px;
-        bottom: 16px;
-        gap: 10px;
-    }
-
-    .social-float a {
-        width: 48px;
-        height: 48px;
-    }
+/* จอเล็กมาก */
+@media (max-width: 380px) {
+    .brand strong { font-size: 24px; }
+    .row { grid-template-columns: 62px minmax(0, 1fr); }
+    .row b { font-size: 19px; }
+    .hours .time { font-size: 36px; }
 }
  </style>
 </head>
+
 <body>
-    <header class="hero">
+<header class="hero">
     <div class="wrap">
     <div class="topbar">
         <a class="brand" href="#home">
-            <img src="marshall.png" alt="โลโก้เฮงฮับ"  style="width: 80px;height: 80px;"><span><strong>เฮงฮับ</strong><small>รับส่งพัสดุ | ปริ้นท์งาน | ถ่ายเอกสาร | ประกันภัยรถยนต์ | ส่งพัสดุต่างประเทศ</small>
+            <img class="brand-mark" src="marshall.png" alt="โลโก้เฮงฮับ"><span><strong>เฮงฮับ</strong><small><span>รับส่งพัสดุ</span> | <span>ปริ้นท์งาน</span> | <span>ถ่ายเอกสาร</span> | <span>ประกันภัยรถยนต์</span> | <span>ส่งพัสดุต่างประเทศ</span></small>
         </span>
         </a>
         <nav class="nav" aria-label="เมนูหลัก">
@@ -1271,11 +1034,13 @@ section {
         </nav>
         <a class="cta" href="#contact">ติดต่อร้าน </a>
     </div>
+</div>
 </header>
 
 <main>
     <!--HERO-->
-    <section class="hero-grid" id="home">
+    <section class="hero-section" id="home">
+        <div class="wrap hero-grid">
         <div class="hero-body">
             <div class="hero-text">
                 <span class="tag">ศูนย์รวมขนส่งชั้นนำ 📦</span>
@@ -1295,7 +1060,7 @@ section {
             </div>
             <div class="slip-wrap">
                 <div class="slip-pos">
-                    <img src="henghub.png" alt="โลโก้เฮงฮับ" class="sticker" style="width: 185px;height: 140px;">
+                    <img src="henghub.png" alt="โลโก้เฮงฮับ" class="sticker">
                     <div class="slip">
                             <div class="slip-head"><b>ใบฝากส่งพัสดุ</b><span class="fragile">FRAGILE</span></div>
                             <div class="slip-rows">
@@ -1326,14 +1091,14 @@ section {
         <div class="wrap">
             <div class="section-head">
                 <div class="kicker">OUR SERVICES</div>
-                <h2>บริการที่เฮงอับ</h2>
+                <h2>บริการที่เฮงฮับ</h2>
                 <p>ช่วยให้การส่งของของคุณสะดวกยิ่งขึ้น บริการเป็นกันเอง</p>
             </div>
             <div class="services">
                 <article class="service">
                     <div class="service-icon">📦</div>
                     <h3>รับส่งพัสดุ</h3>
-                    <p>ศุนย์รวมขนส่งชั้นนำ ฝากส่งได้ทุกค่ายที่ร้านเดียว</p>
+                    <p>ศูนย์รวมขนส่งชั้นนำ ฝากส่งได้ทุกค่ายที่ร้านเดียว</p>
                     <a href="#carriers">ขนส่งที่รองรับ</a>
                 </article>
                 <article class="service">
@@ -1362,16 +1127,16 @@ section {
             <div class="section-head">
                 <div class="kicker">DELIVERY PARTNERS</div>
                 <h2>ขนส่งที่ร้านรองรับ</h2>
-                <P>ส่งได้ทุกค่าย เลือกขนส่งที่ต้องการได้เลย</P>
+                <p>ส่งได้ทุกค่าย เลือกขนส่งที่ต้องการได้เลย</p>
             </div>
             <div class="carrier-grid">
-                <div class="carrier"><a href="https://track.thailandpost.co.th/ rel="noopener noreferrer target="_blank"" title="เช็คพัสดุไปรษณีย์"><img src="ems.jpeg" alt="ไปรษณีย์ไทย EMS" style="width: 135.22px;height: 78px;"></a></div>
-                <div class="carrier"><a href="https://www.flashexpress.co.th/fle/tracking" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ FLASH"><img src="flash.png" alt="FLASH EXPRESS" style="width: 135.22px;height: 78px;"></a></div>
-                <div class="carrier"><a href="https://th.kex-express.com/th/track-parcel" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ KEX"><img src="kex.png" alt="KEX" style="width: 135.22px;height: 78px;"></a></div>
-                <div class="carrier"><a href="https://spx.co.th/th" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ SPX"><img src="spx.jpeg" alt="SPX" style="width: 135.22px;height: 78px;"></a></div>
-                <div class="carrier"><a href="https://www.dhl.com/th-th/home/tracking.html" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ DHL"><img src="dhl.jpeg" alt="DHL" style="width: 135.22px;height: 78px;"></a></div>
-                <div class="carrier"><a href="https://www.jtexpress.co.th/" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ J&T"><img src="jt.jpeg" alt="J&T EXPRESS" style="width: 135.22px;height: 78px;"></a></div>
-                <div class="carrier"><a href="https://www.best-inc.co.th/track" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ BEST"><img src="best.png" alt="BEST EXPRESS" style="width: 135.22px;height: 78px;"></a></div>      
+                <div class="carrier"><a href="https://track.thailandpost.co.th/" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุไปรษณีย์"><img src="ems.jpeg" alt="ไปรษณีย์ไทย EMS"></a></div>
+                <div class="carrier"><a href="https://www.flashexpress.co.th/fle/tracking" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ FLASH"><img src="flash.png" alt="FLASH EXPRESS"></a></div>
+                <div class="carrier"><a href="https://th.kex-express.com/th/track-parcel" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ KEX"><img src="kex.png" alt="KEX"></a></div>
+                <div class="carrier"><a href="https://spx.co.th/th" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ SPX"><img src="spx.jpeg" alt="SPX"></a></div>
+                <div class="carrier"><a href="https://www.dhl.com/th-th/home/tracking.html" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ DHL"><img src="dhl.jpeg" alt="DHL"></a></div>
+                <div class="carrier"><a href="https://www.jtexpress.co.th/" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ J&T"><img src="jt.jpeg" alt="J&T EXPRESS"></a></div>
+                <div class="carrier"><a href="https://www.best-inc.co.th/track" rel="noopener noreferrer" target="_blank" title="เช็คพัสดุ BEST"><img src="best.png" alt="BEST EXPRESS"></a></div>      
             </div>
         </div>
     </section>
@@ -1389,7 +1154,7 @@ section {
                 </div>
                 <div class="step">
                     <b>2 · แจ้งปลายทาง</b>
-                    <p>เตรียมบัตรประชาชนของผู่ส่ง ชื่อ-นามสกุล เบอร์โทรและที่อยู่ของผู้รับให้ครบถ้วน</p>
+                    <p>เตรียมบัตรประชาชนของผู้ส่ง ชื่อ-นามสกุล เบอร์โทรและที่อยู่ของผู้รับให้ครบถ้วน</p>
                 </div>
                 <div class="step">
                     <b>3 · เลือกขนส่ง</b>
@@ -1400,7 +1165,7 @@ section {
     </section>
     <!--PRINT AND COPY-->
     <section id="printer">
-        <div class="warp">
+        <div class="wrap">
             <div class="section-head">
                 <div class="kicker">PRINT AND COPY SERVICE RATES</div>
                 <h3>อัตราค่าบริการปริ้นท์งานและถ่ายเอกสาร</h3>
@@ -1433,73 +1198,73 @@ section {
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="Service">
+                            <td class="Service" data-label="">
                                 <span>1.ถ่ายเอกสารขาวดำ</span>           
                                     <span class="english">B&W Copy</span>
                             </td>
-                            <td class="price">2 บาท</td>
-                            <td class="price">
+                            <td class="price" data-label="ปกติ / ใบแรก">2 บาท</td>
+                            <td class="price" data-label="10 แผ่นขึ้นไป">
                                 <span class="price-tag">1.50 บาท</span>
                             </td>
-                            <td class="price">
+                            <td class="price" data-label="50 แผ่นขึ้นไป">
                                 <span class="price-tag">1 บาท</span>
                             </td>
-                            <td class="remark">-</td>
+                            <td class="remark empty" data-label="หมายเหตุ">-</td>
                         </tr> 
                         <tr>
-                             <td class="Service">
+                             <td class="Service" data-label="">
                                 <span>2. ปริ้นขาวดำ</span>
                                 <span class="english">B&W Print</span>
                             </td>
-                             <td class="price">4 บาท</td>
-                             <td class="price">
+                             <td class="price" data-label="ปกติ / ใบแรก">4 บาท</td>
+                             <td class="price" data-label="10 แผ่นขึ้นไป">
                                     <span class="price-tag">1.75 บาท</span>
                             </td>
-                            <td class="price">
+                            <td class="price" data-label="50 แผ่นขึ้นไป">
                                 <span class="price-tag">1.50 บาท</span>
                             </td>
-                            <td class="remark">
+                            <td class="remark" data-label="หมายเหตุ">
                                 <strong>*ใบต่อไป เนื้อหาเดียวกัน</strong>
                                 2 บาท/แผ่น
                             </td>
                         </tr>
                         <tr>
-                            <td class="Service">
+                            <td class="Service" data-label="">
                                 <span>3. ถ่ายเอกสารสี</span>
                                 <span class="english">Color Copy</span>
                             </td>
-                            <td class="price">10 บาท</td>
-                            <td class="price">
+                            <td class="price" data-label="ปกติ / ใบแรก">10 บาท</td>
+                            <td class="price" data-label="10 แผ่นขึ้นไป">
                                 <span class="price-tag">8 บาท</span>
                             </td>
-                            <td class="price">
+                            <td class="price" data-label="50 แผ่นขึ้นไป">
                                 <span class="price-tag">7 บาท</span>
                             </td>
-                            <td class="remark">—</td>
+                            <td class="remark empty" data-label="หมายเหตุ">—</td>
                         </tr>
                         <tr>
-                            <td class="Service">
+                            <td class="Service" data-label="">
                                 <span>4. ปริ้นสี (เต็มหน้า)</span>
                                 <span class="english">Color Print (Full Page)</span>
                             </td>
-                            <td class="price">15 บาท</td>
-                            <td class="price">
+                            <td class="price" data-label="ปกติ / ใบแรก">15 บาท</td>
+                            <td class="price" data-label="10 แผ่นขึ้นไป">
                                 <span class="price-tag">13 บาท</span>
                             </td>
-                            <td class="price">
+                            <td class="price" data-label="50 แผ่นขึ้นไป">
                                 <span class="price-tag">12 บาท</span>
                             </td>
-                            <td class="remark">—</td>
+                            <td class="remark empty" data-label="หมายเหตุ">—</td>
                         </tr>
                         <tr>
-                            <td class="Service">
+                            <td class="Service" data-label="">
                                 <span>5. ปริ้นสี (ครึ่งหน้า)</span>
                                 <span class="english">Color Print (Half Page)</span>
                             </td>
-                            <td class="price">10–15 บาท</td>
-                            <td class="price">—</td>
-                            <td class="price">—</td>
-                            <td class="remark">
+                            <td class="price" data-label="ปกติ / ใบแรก">10–15 บาท</td>
+                            <td class="price empty" data-label="10 แผ่นขึ้นไป">—</td>
+                            <td class="price empty" data-label="50 แผ่นขึ้นไป">—</td>
+                            <td class="remark" data-label="หมายเหตุ">
                                 <strong>*ราคาขึ้นอยู่กับ</strong>
                                 ปริมาณหมึก
                             </td>
@@ -1536,7 +1301,7 @@ section {
                         </ul> 
             </div> 
                 <figure class="polaroids">
-                    <img src="indoor.jpg" alt="ตราชั่งกับกล่องพัสดุ" " style="width: 252px;height: 336px;" loading="lazy">
+                    <img src="indoor.jpg" alt="ตราชั่งกับกล่องพัสดุ" loading="lazy">
                      <figcaption>😊</figcaption>
                 </figure>
         </div>   
@@ -1557,9 +1322,9 @@ section {
       <p class="time tabular">10.00 - 19.00</p>
       <p class="welcome"><br>ยินดีต้อนรับ ขอบคุณที่ใช้บริการ<br><br></p>
       <div class="info">
-        <div class="row"><span>วันทำการ</span><b class="fill">เปิดบริการทุกวัน<br><br></b></div>
-        <div class="row"><span><br>ที่อยู่</span><b class="fill"><br>123/17 หมู่ 5 ต.สุรศักดิ์ อ.ศรีราชา จ.ชลบุรี 20110 <br><br></b></div>
-        <div class="row"><span><br>โทร.</span><b><br>062-521-2788</b></div>
+        <div class="row"><span>วันทำการ</span><b class="fill">เปิดบริการทุกวัน</b></div>
+        <div class="row"><span>ที่อยู่</span><b class="fill">123/17 หมู่ 5 ต.สุรศักดิ์ อ.ศรีราชา จ.ชลบุรี 20110</b></div>
+        <div class="row"><span>โทร.</span><b><a href="tel:+66625212788">062-521-2788</a></b></div>
       </div>
       </div>
     </div>
@@ -1585,16 +1350,17 @@ section {
                 </div>
             </div>
         </div>
+        </div>
         <div class="foot">
             <div class="brand">
                 <img src="marshall.png" alt="โลโก้เฮงฮับ" style="width: 36px;height: 36px;">
                 <span>เฮงฮับ<small>พัสดุถึงไว บริการด้วยใจ</small></span>
             </div>
-            <p>รับส่งพัสดุ | ปริ้นท์งาน | ถ่ายเอกสาร | ประกันภัยรถยนต์ | ส่งพัสดุต่างประเทศ</p>
+            <p class="foot-tag"><span>รับส่งพัสดุ</span> | <span>ปริ้นท์งาน</span> | <span>ถ่ายเอกสาร</span> | <span>ประกันภัยรถยนต์</span> | <span>ส่งพัสดุต่างประเทศ</span></p>
         </div>
         <div id="contact-details">
             <b>ช่องทางติดต่อร้าน</b>
-            <p><a href="tel:+6662-521-2788">เบอร์โทรศัพท์</a>·<a href="https://line.me/R/ti/p/@033vcpsb" target="_blank" rel="noopener noreferrer" aria-label="ติดต่อเฮงฮับผ่าน LINE OA">LINE </a>·<a href="https://www.facebook.com/henghub2026/" target="_blank" rel="noopener noreferrer" aria-label="ติดต่อเฮงฮับผ่าน Facebook">Facebook</a></p>
+            <p><a href="tel:+66625212788">เบอร์โทรศัพท์</a>·<a href="https://line.me/R/ti/p/@033vcpsb" target="_blank" rel="noopener noreferrer" aria-label="ติดต่อเฮงฮับผ่าน LINE OA">LINE </a>·<a href="https://www.facebook.com/henghub2026/" target="_blank" rel="noopener noreferrer" aria-label="ติดต่อเฮงฮับผ่าน Facebook">Facebook</a></p>
             <address>123/17 หมู่ 5 ต.สุรศักดิ์ อ.ศรีราชา จ.ชลบุรี 20110</address>
             <div class="footer-note">&copy;HENGHUB เฮงฮับ — เว็บไซต์ต้นแบบสำหรับปรับแต่ง</div>
         </div>
